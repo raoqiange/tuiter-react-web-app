@@ -1,0 +1,22 @@
+.wd-bg-black {
+    background: black;
+}
+
+.wd-selected {
+    font-weight: bold;
+}
+
+.wd-active {
+    color: white;
+    border-bottom: #61dafb;
+}
+
+.wd-search-tuiter {
+    bottom: 10px;
+    left: 25px;
+}
+
+.wd-explore-gear {
+    font-size: 1.5em;
+    padding-top: 8px;
+}
