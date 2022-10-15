@@ -22,7 +22,7 @@ const PostItem = (
         <li className="list-group-item">
             <div className="row">
                 <div className="col-1">
-                    <img className="rounded-circle" style={{"width": "45px"}} src={`/images/${post.avatarIcon}`} />
+                    <img className="rounded-circle" style={{"width": "45px"}} src={`/images/${post.avatarIcon}`} alt="..."/>
                 </div>
                 <div className="col-11 ps-4">
                     <div className="row">
@@ -52,19 +52,19 @@ const PostItem = (
 
                     <div className="row mt-2">
                         <div className="col-3">
-                            <a className="text-secondary text-decoration-none" href="#"><i
+                            <a className="text-secondary text-decoration-none" href="/#"><i
                                 className="bi bi-chat"></i><span className="ms-3">{post.comment}</span></a>
                         </div>
                         <div className="col-3">
-                            <a className="text-secondary text-decoration-none" href="#"><i
+                            <a className="text-secondary text-decoration-none" href="/#"><i
                                 className="bi bi-repeat"></i><span className="ms-3">{post.share}</span></a>
                         </div>
                         <div className="col-3">
-                            <a className="text-secondary text-decoration-none" href="#"><i
+                            <a className="text-secondary text-decoration-none" href="/#"><i
                                 className="bi bi-heart"></i><span className="ms-3">{post.like}</span></a>
                         </div>
                         <div className="col-3">
-                            <a className="text-secondary text-decoration-none" href="#"><i
+                            <a className="text-secondary text-decoration-none" href="/#"><i
                                 className="bi bi-upload"></i></a>
                         </div>
                     </div>
