@@ -1,24 +1,31 @@
 import React from 'react';
-const NavigationSidebar = (
-    {
-        active = 'explore'
-    }
-) => {
+import {Link} from "react-router-dom";
+import {useLocation} from "react-router";
+
+
+const NavigationSidebar = () => {
+    const {pathname} = useLocation();
+    const paths = pathname.split('/')
+    const active = paths[2];
     return (
         <div className="list-group">
             <a className="list-group-item "><i className="bi bi-twitter"></i></a>
 
-            <a href="../HomeScreen/index.html"
+            <Link to="/tuiter/home"
                className={`list-group-item list-group-item-action ${active === 'home' ? 'active' : ''}`}>
                 <i className="bi bi-house-door-fill me-2"></i>
                 <span className="d-none d-xl-inline-block"> Home</span>
-            </a>
+            </Link>
 
-             <a href="../ExploreScreen/index.html"
+             <Link to="/tuiter/explore"
                 className={`list-group-item list-group-item-action ${active === 'explore' ? 'active' : ''}`}>
                 <i className="bi bi-hash me-2"></i>
                 <span className="d-none d-xl-inline-block"> Explore</span>
-            </a>
+            </Link>
+
+            <Link to="/" className="list-group-item">
+                Labs
+            </Link>
 
             <a href="" className={`list-group-item list-group-item-action ${active === 'notification' ? 'active' : ''}`}>
                 <i className="bi bi-bell-fill me-2"></i>
@@ -30,7 +37,7 @@ const NavigationSidebar = (
                 <span className="d-none d-xl-inline-block"> Messages</span>
             </a>
 
-            <a href="../bookmarks/index.html" className={`list-group-item list-group-item-action ${active === 'bookmarks' ? 'active' : ''}`}>
+            <a href="" className={`list-group-item list-group-item-action ${active === 'bookmarks' ? 'active' : ''}`}>
                 <i className="bi bi-bookmark-fill me-2"></i>
                 <span className="d-none d-xl-inline-block"> Bookmarks</span>
             </a>
@@ -40,7 +47,7 @@ const NavigationSidebar = (
                 <span className="d-none d-xl-inline-block"> Lists</span>
             </a>
 
-            <a href="../profile.html"
+            <a href=""
                className={`list-group-item list-group-item-action ${active === 'bookmarks' ? 'profile' : ''}`}>
                 <i className="bi bi-person-fill me-2"></i>
                 <span className="d-none d-xl-inline-block"> Profile</span>
