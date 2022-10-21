@@ -12,7 +12,7 @@ function Tuiter() {
             </div>
             <div className="col-10 col-lg-6 col-xl-6">
                 <Routes>
-                    <Route path="/home" element={<HomeComponent />} />
+                    <Route path="/*" element={<HomeComponent />} />
                     <Route path="/explore" element={<ExploreComponent />} />
                 </Routes>
             </div>
