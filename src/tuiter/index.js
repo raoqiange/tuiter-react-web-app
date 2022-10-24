@@ -11,8 +11,6 @@ import tuitsReducer from "./reducers/tuits-reducer";
 import profileReducer from "./reducers/profile-reducer";
 import {configureStore} from "@reduxjs/toolkit";
 import {Provider} from "react-redux";
-import Profile from "./profile";
-
 
 const store = configureStore({
     reducer: {who: whoReducer, postsSummary: postsSummaryReducer, tuits: tuitsReducer, profile: profileReducer}

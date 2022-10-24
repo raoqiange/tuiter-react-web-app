@@ -9,15 +9,29 @@ const profile = {
     bio: 'Music, Anime lover, Software Engineer',
     website: 'www.rachelrrrrr.com',
     location: 'Vancouver, Canada',
-    dataOfBirth : 'unknown',
-    dataJoined: '10/2022',
+    dateOfBirth : '01/01/2022',
+    dateJoined: '10/2022',
     followingCount: 2222,
     followersCount: 2222
 }
 
 const profileSlice = createSlice({
     name: "profile",
-    initialState: profile
+    initialState: profile,
+    reducers: {
+        updateProfile(state, action) {
+            const updatedProfile = action.payload;
+            let [firstName, ...lastName] = updatedProfile.name.split('/');
+            lastName = lastName.join(' ');
+            const bio = updatedProfile.bio;
+            const location = updatedProfile.location;
+            const website = updatedProfile.website;
+            const [year, month, day] = updatedProfile.birthday.split('-');
+            const dateOfBirth = [month, day, year].join('/');
+            return {...state, firstName, lastName, bio, location, website, dateOfBirth}
+        }
+    }
 });
 
+export const {updateProfile} = profileSlice.actions;
 export default profileSlice.reducer;
