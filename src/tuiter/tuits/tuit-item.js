@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {deleteTuit} from "../reducers/tuits-reducer";
+// import {deleteTuit} from "../reducers/tuits-reducer"; //replace with deleteTuitThunk
+import {deleteTuitThunk, updateTuitThunk} from "../../services/tuits-thunks";
 
 const TuitItem = (
     {
@@ -22,7 +23,7 @@ const TuitItem = (
 ) => {
     const dispatch = useDispatch();
     const deleteTuitHandler = (id) => {
-        dispatch(deleteTuit(id));
+        dispatch(deleteTuitThunk(id));
     }
 
     return(
@@ -69,8 +70,35 @@ const TuitItem = (
                             <i className="bi bi-repeat"></i><span className="ms-2">{post.retuits}</span>
                         </div>
                         <div className="col-3">
-                            {post.liked? <i className="bi bi-heart-fill text-danger"></i>: <i className="bi bi-heart"></i>}
-                            <span className="ms-2">{post.likes}</span>
+                            {post.liked ?
+                                <i onClick={() => dispatch(updateTuitThunk({
+                                    ...post,
+                                    likes: post.likes + 1
+                                }))}
+                                    className="bi bi-heart-fill text-danger"></i>
+                                :
+                                <i onClick={() => dispatch(updateTuitThunk({
+                                    ...post,
+                                    liked: true,
+                                    likes: post.likes + 1
+                                }))}
+                                    className="bi bi-heart"></i>}
+                            <span className="ms-1 me-1">{post.likes}</span>
+                            {post.disliked ?
+                                <i onClick={() => dispatch(updateTuitThunk({
+                                    ...post,
+                                    dislikes: post.dislikes + 1
+                                }))}
+                                    className="bi bi-hand-thumbs-down-fill"></i>
+                                :
+                                <i onClick={() => dispatch(updateTuitThunk({
+                                    ...post,
+                                    disliked: true,
+                                    dislikes: post.dislikes + 1
+                                }))}
+                                   className="bi bi-hand-thumbs-down"></i>
+                            }
+                            <span className="ms-1">{post.dislikes}</span>
                         </div>
                         <div className="col-3">
                             <i className="bi bi-upload"></i>
