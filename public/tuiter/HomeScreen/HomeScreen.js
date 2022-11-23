@@ -9,7 +9,7 @@ function homeScreen() {
                 ${NavigationSidebar('home')}
            </div>
            <div class="col-10 col-lg-6 col-xl-6">
-                ${PostList()}     
+                ${PostList()}
            </div>
            <div class="d-none d-lg-block col-lg-5 col-xl-4">
                 ${PostSummaryList()}
