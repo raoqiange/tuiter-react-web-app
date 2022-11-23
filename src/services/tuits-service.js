@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const TUITS_API = 'https://tuiter-node-server-appp.herokuapp.com/api/tuits';
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:4000/api";
+const API_BASE = process.env.REACT_APP_API_BASE2 || "http://localhost:4000/api";
 // console.log('env var' ,API_BASE)
 const TUITS_API = `${API_BASE}/tuits`;
 
