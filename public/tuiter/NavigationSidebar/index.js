@@ -26,7 +26,7 @@ const NavigationSidebar = (active) => {
             <i class="fa-solid fa-list"></i>
             <span class="d-none d-xl-inline-block"> Lists</span>
         </a>
-        <a href="../profile.html" class="list-group-item list-group-item-action ${active === 'profile' ? 'active' : ''}">
+        <a href="../profileinit.html" class="list-group-item list-group-item-action ${active === 'profile' ? 'active' : ''}">
             <i class="fa-solid fa-user"></i>
             <span class="d-none d-xl-inline-block"> Profile</span>
         </a>
